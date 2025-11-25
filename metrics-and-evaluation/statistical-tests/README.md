@@ -37,15 +37,26 @@ Ignore the sign, just look at magnitude:
 - |d₁| = 75.7 gets rank 3 (largest difference)
 - ... continue for all 200 samples
 
-**Step 3: Sum ranks separately** for positive and negative differences
+**Why rank?** Because we want to give more importance to **larger differences**. A big difference is more convincing evidence than a small difference.
 
-- R⁺ = sum of ranks where dᵢ > 0 (InvertiTune wins)
-- R⁻ = sum of ranks where dᵢ < 0 (DeepEx wins)
+**Step 3: Assign signs back to the ranks**
 
-**Step 4: Compare R⁺ and R⁻**
+Now we look at whether each difference was positive or negative:
+- d₃ = -0.5 (negative) → rank 1 goes to the "negative" group
+- d₂ = 74.9 (positive) → rank 2 goes to the "positive" group  
+- d₁ = 75.7 (positive) → rank 3 goes to the "positive" group
+
+**Step 4: Sum the ranks separately**
+
+- **R⁺** = sum of ranks for positive differences (where InvertiTune wins)
+  - In our example: R⁺ = 2 + 3 = 5
+- **R⁻** = sum of ranks for negative differences (where DeepEx wins)
+  - In our example: R⁻ = 1
+
+**Step 5: Compare R⁺ and R⁻**
 
 - If models are equal (H₀), then R⁺ and R⁻ should be similar
-- If InvertiTune is truly better, R⁺ will be much larger than R⁻
+- In our example: R⁺ = 5 is much larger than R⁻ = 1, suggesting InvertiTune is better
 - The test computes a **p-value** based on how different R⁺ and R⁻ are
 
 ### Python Implementation
