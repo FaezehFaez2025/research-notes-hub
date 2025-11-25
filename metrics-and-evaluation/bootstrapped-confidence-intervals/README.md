@@ -18,13 +18,15 @@ The average score provides a point estimate of model performance:
 
 However, this point estimate does not capture the variability that would arise if the evaluation were repeated on different test sets drawn from the same distribution.
 
-### Bootstrap Resampling
+### Bootstrap Method
 
-To estimate this variability, we apply **bootstrap resampling**:
+To estimate this variability, we apply the **bootstrap method**:
 
 1. Generate **B = 10,000** bootstrap samples
-2. Each bootstrap sample is constructed by randomly sampling **200 items with replacement** from the original test set (i.e., drawing 200 samples with replacement from the original 200 samples)
+2. Each bootstrap sample is constructed by randomly drawing **200 items with replacement** from the original test set (i.e., we sample again from the same 200 samples, allowing duplicates)
 3. For each bootstrap sample `b`, compute the corresponding metric value `μ̂⁽ᵇ⁾` by averaging the scores of the items in that bootstrap sample
+
+**What does "resample" mean?** "Resample" means to sample again from data you already have. Instead of collecting new test data, we create new samples by drawing (with replacement) from the original test set. This is why bootstrap is sometimes called "resampling" - we're sampling again from existing data.
 
 The distribution of bootstrap metric values:
 ```
