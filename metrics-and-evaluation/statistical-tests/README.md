@@ -59,6 +59,25 @@ Now we look at whether each difference was positive or negative:
 - In our example: R⁺ = 5 is much larger than R⁻ = 1, suggesting InvertiTune is better
 - The test computes a **p-value** based on how different R⁺ and R⁻ are
 
+### What is a p-value?
+
+The **p-value** answers: "If the models were actually equal, how likely is it to see a difference this large just by random chance?"
+
+For our example:
+- InvertiTune: 82.02
+- DeepEx: 6.32
+- Difference: 75.7 points
+
+The p-value tells us: Could this huge 75.7-point difference happen by random luck if the models were actually the same?
+
+- **p = 0.001** (very small): Only 0.1% chance this could happen by luck → The models are **truly different**
+- **p = 0.4** (large): 40% chance this could happen by luck → We **cannot conclude** they're different
+
+**Simple rule:**
+- **p < 0.05**: The difference is real (statistically significant)
+- **p < 0.01**: Very strong evidence
+- **p < 0.001**: Extremely strong evidence
+
 ### Python Implementation
 
 ```python
@@ -79,22 +98,3 @@ print(f"p-value: {p_value:.4e}")
 if p_value < 0.001:
     print("→ InvertiTune significantly outperforms DeepEx (p < 0.001)")
 ```
-
-### What is a p-value?
-
-The **p-value** answers: "If the models were actually equal, how likely is it to see a difference this large just by random chance?"
-
-For our example:
-- InvertiTune: 82.02
-- DeepEx: 6.32
-- Difference: 75.7 points
-
-The p-value tells us: Could this huge 75.7-point difference happen by random luck if the models were actually the same?
-
-- **p = 0.001** (very small): Only 0.1% chance this could happen by luck → The models are **truly different**
-- **p = 0.4** (large): 40% chance this could happen by luck → We **cannot conclude** they're different
-
-**Simple rule:**
-- **p < 0.05**: The difference is real (statistically significant)
-- **p < 0.01**: Very strong evidence
-- **p < 0.001**: Extremely strong evidence
