@@ -23,8 +23,8 @@ However, this point estimate does not capture the variability that would arise i
 To estimate this variability, we apply **bootstrap resampling**:
 
 1. Generate **B = 10,000** bootstrap samples
-2. Each bootstrap sample is constructed by randomly sampling **200 items with replacement** from the original test set (i.e., resampling the 200 samples with replacement)
-3. For each bootstrap sample `b`, compute the corresponding metric value `μ̂⁽ᵇ⁾` by averaging the scores of the resampled items
+2. Each bootstrap sample is constructed by randomly sampling **200 items with replacement** from the original test set (i.e., drawing 200 samples with replacement from the original 200 samples)
+3. For each bootstrap sample `b`, compute the corresponding metric value `μ̂⁽ᵇ⁾` by averaging the scores of the items in that bootstrap sample
 
 The distribution of bootstrap metric values:
 ```
@@ -56,7 +56,7 @@ To find these percentiles, we sort all 10,000 bootstrap metric values `{μ̂⁽�
 
 A result reported as **82.02 (81.01, 83.00)** indicates that:
 - The point estimate is **82.02**
-- Across resampled datasets of size 200, the metric typically lies within the interval **(81.01, 83.00)** with **95% confidence**
+- Across bootstrap samples of size 200, the metric typically lies within the interval **(81.01, 83.00)** with **95% confidence**
 
 This means that if we were to repeat the evaluation on many different test sets of the same size from the same distribution, we would expect the metric to fall within this interval 95% of the time.
 
