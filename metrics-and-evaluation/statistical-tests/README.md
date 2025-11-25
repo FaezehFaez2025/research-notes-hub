@@ -55,9 +55,13 @@ Now we look at whether each difference was positive or negative:
 
 **Step 5: Compare R⁺ and R⁻**
 
-- If models are equal (H₀), then R⁺ and R⁻ should be similar
+**Null hypothesis (H₀):** The two models have equal performance.
+
+This is what we're testing against. If H₀ is true, then R⁺ and R⁻ should be similar.
+
 - In our example: R⁺ = 5 is much larger than R⁻ = 1, suggesting InvertiTune is better
 - The test computes a **p-value** based on how different R⁺ and R⁻ are
+- If the p-value is very small, we reject H₀ and conclude the models are truly different
 
 ### What is a p-value?
 
