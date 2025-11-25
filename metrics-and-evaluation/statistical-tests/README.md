@@ -16,8 +16,6 @@ For each sample `i` (where `i = 1, 2, ..., 200`):
 - Let `aᵢ` = InvertiTune's score on sample `i`  
 - Let `bᵢ` = DeepEx's score on sample `i`  
 
-Because both models are evaluated on the **same 200 samples**, the data are **paired**.
-
 ### How It Works (Step by Step)
 
 **Step 1: Compute differences** for each sample: `dᵢ = aᵢ - bᵢ`
