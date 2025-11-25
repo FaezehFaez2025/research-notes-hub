@@ -18,15 +18,6 @@ For each sample `i` (where `i = 1, 2, ..., 200`):
 
 Because both models are evaluated on the **same 200 samples**, the data are **paired**.
 
-### Intuition
-
-If the two models are truly equal, then:
-- On some samples, InvertiTune will score higher (positive difference: `dᵢ > 0`)
-- On other samples, DeepEx will score higher (negative difference: `dᵢ < 0`)
-- These differences should be **balanced** in both direction and magnitude
-
-The Wilcoxon test checks whether the positive and negative differences are balanced or if one direction dominates.
-
 ### How It Works (Step by Step)
 
 **Step 1: Compute differences** for each sample: `dᵢ = aᵢ - bᵢ`
@@ -35,6 +26,8 @@ The Wilcoxon test checks whether the positive and negative differences are balan
 - Sample 2: d₂ = 81.8 - 6.9 = 74.9 (positive, InvertiTune better)
 - Sample 3: d₃ = 81.5 - 82.0 = -0.5 (negative, DeepEx better)
 - ... continue for all 200 samples
+
+**Intuition:** If the two models are truly equal, then on some samples InvertiTune will score higher (positive `dᵢ`), and on other samples DeepEx will score higher (negative `dᵢ`). These differences should be **balanced** in both direction and magnitude. The Wilcoxon test checks whether this balance holds or if one direction dominates.
 
 **Step 2: Rank the absolute differences** `|dᵢ|` from smallest to largest
 
