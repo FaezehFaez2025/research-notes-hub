@@ -88,9 +88,11 @@ The p-value tells us: If the models were truly equal, what's the probability of 
 import numpy as np
 from scipy import stats
 
-# Per-sample scores for 200 test samples
-scores_invertitune = [82.1, 81.9, 82.3, ...]  # 200 values
-scores_deepex = [6.4, 6.2, 6.5, ...]          # 200 values
+# Example: Generate per-sample scores for 200 test samples
+# In practice, these would be your actual model scores
+np.random.seed(42)
+scores_invertitune = np.random.normal(82.02, 0.5, 200)  # Mean 82.02
+scores_deepex = np.random.normal(6.32, 0.12, 200)       # Mean 6.32
 
 # Perform Wilcoxon signed-rank test
 stat, p_value = stats.wilcoxon(scores_invertitune, scores_deepex)
