@@ -20,7 +20,7 @@ However, this point estimate does not capture the variability that would arise i
 
 ### Bootstrap Resampling
 
-To estimate this variability, we apply **non-parametric bootstrap resampling**:
+To estimate this variability, we apply **bootstrap resampling**:
 
 1. Generate **B = 10,000** bootstrap samples
 2. Each bootstrap sample is constructed by randomly sampling **200 items with replacement** from the original test set (i.e., resampling the 200 samples with replacement)
