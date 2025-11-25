@@ -6,7 +6,7 @@ Bootstrap confidence intervals provide a way to quantify the uncertainty of eval
 
 ## Example: Test Set with 200 Samples
 
-Consider a test set containing **200 samples**. For each sample `i` (where `i = 1, 2, ..., 200`), let `sᵢ` denote the score for the i-th sample (e.g., G-BLEU). The collection of all per-sample scores is `{s₁, s₂, ..., s₂₀₀}`.
+Consider a test set containing **200 samples**. For each sample `i` (where `i = 1, 2, ..., 200`), let `sᵢ` denote the score (e.g., G-BLEU) for the i-th sample. The collection of all per-sample scores is `{s₁, s₂, ..., s₂₀₀}`.
 
 ### Point Estimate
 
