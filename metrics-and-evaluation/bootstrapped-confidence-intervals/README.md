@@ -33,11 +33,11 @@ To estimate this variability, we apply the **bootstrap method**:
    - This creates one bootstrap sample of size 200, which may contain duplicates
 3. For each bootstrap sample `b`, compute the corresponding metric value `μ̂⁽ᵇ⁾` by averaging the scores of the items in that bootstrap sample
 
-The distribution of bootstrap metric values:
+The collection of bootstrap metric values:
 ```
 {μ̂⁽¹⁾, μ̂⁽²⁾, ..., μ̂⁽ᴮ⁾}
 ```
-approximates how the metric would vary over repeated evaluations.
+forms a distribution that approximates how the metric would vary over repeated evaluations.
 
 ### 95% Confidence Interval
 
