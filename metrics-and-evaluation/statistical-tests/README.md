@@ -88,7 +88,7 @@ scores_invertitune = [82.1, 81.8, 81.5, 82.3, 82.0]
 scores_deepex      = [6.4,  6.9,  8.2,  6.1,  6.3]
 
 # Wilcoxon signed-rank test (InvertiTune > DeepEx)
-stat, p_value = stats.wilcoxon(scores_invertitune, scores_deepex, alternative="greater")
+stat, p_value = stats.wilcoxon(scores_invertitune, scores_deepex, alternative="two-sided")
 
 print("Statistic:", stat)
 print("p-value:", p_value)
