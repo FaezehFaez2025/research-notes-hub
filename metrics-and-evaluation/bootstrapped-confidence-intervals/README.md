@@ -33,8 +33,6 @@ To estimate this variability, we apply the **bootstrap method**:
    - This creates one bootstrap sample of size 200, which may contain duplicates
 3. For each bootstrap sample `b`, compute the corresponding metric value `μ̂⁽ᵇ⁾` by averaging the scores of the items in that bootstrap sample
 
-**What does "resample" mean?** "Resample" means to sample again from data you already have. Instead of collecting new test data, we create new samples by drawing (with replacement) from the original test set. This is why bootstrap is sometimes called "resampling" - we're sampling again from existing data.
-
 The distribution of bootstrap metric values:
 ```
 {μ̂⁽¹⁾, μ̂⁽²⁾, ..., μ̂⁽ᴮ⁾}
