@@ -16,8 +16,6 @@ The average score provides a point estimate of model performance:
 μ̂ = (1/200) × Σᵢ₌₁²⁰⁰ sᵢ
 ```
 
-where `sᵢ` is the score for the i-th sample.
-
 However, this point estimate does not capture the variability that would arise if the evaluation were repeated on different test sets drawn from the same distribution.
 
 ### Bootstrap Resampling
