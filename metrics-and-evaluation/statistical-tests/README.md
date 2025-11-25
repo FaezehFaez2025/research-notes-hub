@@ -27,8 +27,6 @@ Because both models are evaluated on the **same 200 samples**, the data are **pa
 - Sample 3: d₃ = 81.5 - 82.0 = -0.5 (negative, DeepEx better)
 - ... continue for all 200 samples
 
-**Intuition:** If the two models are truly equal, then on some samples InvertiTune will score higher (positive `dᵢ`), and on other samples DeepEx will score higher (negative `dᵢ`). These differences should be **balanced** in both direction and magnitude. The Wilcoxon test checks whether this balance holds or if one direction dominates.
-
 **Step 2: Rank the absolute differences** `|dᵢ|` from smallest to largest
 
 Ignore the sign, just look at magnitude:
