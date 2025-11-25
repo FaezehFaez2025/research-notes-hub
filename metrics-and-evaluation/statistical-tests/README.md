@@ -65,14 +65,14 @@ This is what we're testing against. If H₀ is true, then R⁺ and R⁻ should b
 
 ### What is a p-value?
 
-The **p-value** answers: "If the models were actually equal, how likely is it to see a difference this large just by random chance?"
+The **p-value** answers: "If the models were actually equal (H₀ is true), how likely is it to see a result as extreme as what we observed, just by random chance?"
 
-For our example:
-- InvertiTune: 82.02
-- DeepEx: 6.32
-- Difference: 75.7 points
+In our example, we observed:
+- R⁺ = 5 (InvertiTune wins on the larger differences)
+- R⁻ = 1 (DeepEx wins on the smaller difference)
+- Overall: InvertiTune scores 82.02, DeepEx scores 6.32
 
-The p-value tells us: Could this huge 75.7-point difference happen by random luck if the models were actually the same?
+The p-value tells us: If the models were truly equal, what's the probability of seeing R⁺ so much larger than R⁻ just by luck?
 
 - **p = 0.001** (very small): Only 0.1% chance this could happen by luck → The models are **truly different**
 - **p = 0.4** (large): 40% chance this could happen by luck → We **cannot conclude** they're different
