@@ -81,22 +81,15 @@ The p-value tells us: If the models were truly equal, what's the probability of 
 ### Python Implementation
 
 ```python
-import numpy as np
 from scipy import stats
 
-# Example: Generate per-sample scores for 200 test samples
-# In practice, these would be your actual model scores
-np.random.seed(42)
-scores_invertitune = np.random.normal(82.02, 0.5, 200)  # Mean 82.02
-scores_deepex = np.random.normal(6.32, 0.12, 200)       # Mean 6.32
+# Small example lists (replace with your values)
+scores_invertitune = [82.1, 81.8, 81.5, 82.3, 82.0]
+scores_deepex      = [6.4,  6.9,  8.2,  6.1,  6.3]
 
-# Perform Wilcoxon signed-rank test
-stat, p_value = stats.wilcoxon(scores_invertitune, scores_deepex)
+# Wilcoxon signed-rank test (InvertiTune > DeepEx)
+stat, p_value = stats.wilcoxon(scores_invertitune, scores_deepex, alternative="greater")
 
-print(f"InvertiTune mean: {np.mean(scores_invertitune):.2f}")
-print(f"DeepEx mean: {np.mean(scores_deepex):.2f}")
-print(f"p-value: {p_value:.4e}")
-
-if p_value < 0.001:
-    print("→ InvertiTune significantly outperforms DeepEx (p < 0.001)")
+print("Statistic:", stat)
+print("p-value:", p_value)
 ```
