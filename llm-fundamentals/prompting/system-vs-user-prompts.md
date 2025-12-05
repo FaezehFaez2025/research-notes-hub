@@ -56,5 +56,3 @@ messages = [
 ]
 ```
 
-The system prompt shapes *how* the model answers. The user prompt is *what* it answers.
-
