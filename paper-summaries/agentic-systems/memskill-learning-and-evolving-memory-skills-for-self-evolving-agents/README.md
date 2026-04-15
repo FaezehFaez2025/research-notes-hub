@@ -7,7 +7,9 @@
 
 **Main Idea**
 
-The paper proposes **MemSkill**, an agentic framework that augments large language models (LLMs) with a memory-driven skill selection mechanism. Instead of improving the LLM itself, the system learns to dynamically select and compose skills (such as retrieval, reasoning, and summarization) based on the current context and memory. This allows the system to handle multi-step reasoning and long-context tasks more effectively. The framework is designed as a closed-loop system where feedback from task performance is used to refine how skills are selected and expanded over time.
+LLM agent memory systems typically rely on a small set of static, hand-designed operations (such as add, update, delete, and skip) for extracting, consolidating, and revising memory. These fixed procedures scale poorly as interaction histories grow longer.
+
+**MemSkill** makes these memory operations **learnable and evolvable** by reframing them as an **evolving skill bank** — structured, reusable skills that are continuously refined over training based on hard cases and failures. The result is a **self-evolving agent memory system** driven by interaction data.
 
 ![Figure 1: Prior turn-level handcrafted operations vs MemSkill span-level skill-conditioned generation](MemSkill1.png)
 
