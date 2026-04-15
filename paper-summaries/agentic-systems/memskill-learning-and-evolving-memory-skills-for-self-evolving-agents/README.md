@@ -9,6 +9,8 @@
 
 The paper proposes **MemSkill**, an agentic framework that augments large language models (LLMs) with a memory-driven skill selection mechanism. Instead of improving the LLM itself, the system learns to dynamically select and compose skills (such as retrieval, reasoning, and summarization) based on the current context and memory. This allows the system to handle multi-step reasoning and long-context tasks more effectively. The framework is designed as a closed-loop system where feedback from task performance is used to refine how skills are selected and expanded over time.
 
+![Figure 1: Prior turn-level handcrafted operations vs MemSkill span-level skill-conditioned generation](MemSkill1.png)
+
 **Controller**
 
 The controller is the decision-making component that selects which skill to apply at each step. It is implemented as a lightweight multilayer perceptron (MLP) that takes as input a state embedding derived from the current context and retrieved memory using a shared embedding model (e.g., Qwen3-Embedding-0.6B). The controller is the only trainable part of the system and is optimized using reinforcement learning, where rewards are computed based on task-level performance such as answer correctness. The training objective encourages the controller to favor sequences of skill selections that lead to better final outcomes.
@@ -20,6 +22,8 @@ The executor is responsible for executing the selected skill and generating outp
 **Designer**
 
 The designer is responsible for generating and refining the set of available skills. It is implemented using an LLM-based prompting strategy that analyzes trajectories and failures to propose new or improved skills. The designer is fixed and not trained; it does not undergo optimization and instead relies on predefined prompting mechanisms to expand the skill set over time.
+
+![Figure 2: MemSkill architecture overview (controller, executor, skill bank, designer, closed-loop optimization)](MemSkill2.png)
 
 **Closed-Loop Optimization**
 
