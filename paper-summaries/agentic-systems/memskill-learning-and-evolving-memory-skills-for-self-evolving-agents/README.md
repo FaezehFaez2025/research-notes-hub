@@ -7,9 +7,9 @@
 
 **Main Idea**
 
-LLM agent memory systems typically rely on a small set of static, hand-designed operations (such as add, update, delete, and skip) for extracting, consolidating, and revising memory. These fixed procedures scale poorly as interaction histories grow longer.
+LLM agent memory systems typically rely on a small set of static, hand-designed operations (such as add, update, delete, and skip) for extracting, consolidating, and revising memory. These fixed procedures are inefficient on long histories and rigid under diverse interaction patterns.
 
-**MemSkill** makes these memory operations **learnable and evolvable** by reframing them as an **evolving skill bank** — structured, reusable skills that are continuously refined over training based on hard cases and failures. The result is a **self-evolving agent memory system** driven by interaction data.
+**MemSkill** makes these memory operations **learnable and evolvable** by reframing them as an **evolving skill bank** — reusable skills that are continuously refined over training based on hard cases and failures. The result is a **self-evolving agent memory system** driven by interaction data.
 
 ![Figure 1: Prior turn-level handcrafted operations vs MemSkill span-level skill-conditioned generation](MemSkill1.png)
 
