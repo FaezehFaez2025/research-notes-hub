@@ -30,8 +30,15 @@ The executor is responsible for executing the selected skill and generating outp
 
 Uses an LLM to refine existing skills and propose new ones based on failures.
 
-![Figure 2: MemSkill architecture overview (controller, executor, skill bank, designer, closed-loop optimization)](MemSkill2.png)
-
 **Closed-Loop Optimization**
 
-MemSkill operates in a closed-loop cycle where the controller selects skills, the executor applies them to generate outputs, and the system evaluates the results to compute rewards. These rewards are used to update the controller through reinforcement learning, while the designer can introduce new skills based on observed failures. This iterative loop enables continuous improvement in both skill selection and the overall system performance.
+MemSkill alternates between (i) learning to select and apply skills to build memory banks and (ii) evolving the skill bank based on hard cases mined from recent training steps.
+
+Each cycle begins with controller training on the current skill bank, during which the executor constructs memories and the system accumulates challenging cases.
+
+The designer then updates the skill bank using representative hard cases.
+
+The next cycle resumes controller training on the updated skill bank.
+
+![Figure 2: MemSkill architecture overview (controller, executor, skill bank, designer, closed-loop optimization)](MemSkill2.png)
+
