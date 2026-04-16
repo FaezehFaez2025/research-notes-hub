@@ -18,7 +18,7 @@ LLM agent memory systems typically rely on a small set of static, hand-designed 
 The controller is the only learnable component of the system. It selects a small set of relevant memory skills for the current context, implemented as a lightweight MLP trained with reinforcement learning. It operates in two steps:
 
 1. Computes embeddings for the current state and for each skill separately using the same shared embedding model (i.e., Qwen3-Embedding-0.6B).
-2. Scores each skill by comparing the state and skill embeddings, supporting a variable number of skills since the size of the skill bank may grow during training.
+2. Scores each skill by comparing the state and skill embeddings, supporting a variable number of skills since the size of the skill bank may vary during training.
 
 The controller is optimized using RL with rewards based on task-level performance such as answer correctness, encouraging skill selections that lead to better final outcomes.
 
