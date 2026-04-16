@@ -28,7 +28,7 @@ The executor is responsible for executing the selected skill and generating outp
 
 **Designer**
 
-The designer is responsible for generating and refining the set of available skills. It is implemented using an LLM-based prompting strategy that analyzes trajectories and failures to propose new or improved skills. The designer is fixed and not trained; it does not undergo optimization and instead relies on predefined prompting mechanisms to expand the skill set over time.
+Uses an LLM to refine existing skills and propose new ones based on failures.
 
 ![Figure 2: MemSkill architecture overview (controller, executor, skill bank, designer, closed-loop optimization)](MemSkill2.png)
 
