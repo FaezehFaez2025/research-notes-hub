@@ -24,7 +24,7 @@ The controller is optimized using RL with rewards based on task-level performanc
 
 **Executor**
 
-The executor is responsible for executing the selected skill and generating outputs. It is implemented as a frozen large language model accessed via API, specifically LLaMA3.3-70B-Instruct during training and Qwen3-Next80B-A3B-Instruct for transfer experiments. Given the selected skill and the current context, the executor produces outputs such as reasoning steps, retrieved information, or final answers. The executor is not trained and serves as a fixed environment in the system.
+The executor is responsible for executing the selected skill and generating outputs. It is implemented as a frozen large language model accessed via API, specifically LLaMA3.3-70B-Instruct during training and Qwen3-Next80B-A3B-Instruct for transfer experiments.
 
 **Designer**
 
