@@ -16,6 +16,7 @@
   - [Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](#multi-agent-design-optimizing-agents-with-better-prompts-and-topologies)
   - [Multi-agent Architecture Search via Agentic Supernet](#multi-agent-architecture-search-via-agentic-supernet)
   - [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](#darwin-godel-machine-open-ended-evolution-of-self-improving-agents)
+  - [AgentSwift: Efficient LLM Agent Design via Value-Guided Hierarchical Search](#agentswift-efficient-llm-agent-design-via-value-guided-hierarchical-search)
 
 ## Brief description of these methods
 
@@ -90,5 +91,11 @@
 ### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
 
 - **PDF:** [https://arxiv.org/pdf/2505.22954](https://arxiv.org/pdf/2505.22954)
+
+**Summary:** TBC
+
+### AgentSwift: Efficient LLM Agent Design via Value-Guided Hierarchical Search
+
+- **PDF:** [https://arxiv.org/pdf/2506.06017](https://arxiv.org/pdf/2506.06017)
 
 **Summary:** TBC
