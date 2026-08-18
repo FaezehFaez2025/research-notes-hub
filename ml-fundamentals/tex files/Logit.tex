@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% ---------- Colors ----------
+\definecolor{deepblue}{HTML}{1B3B6F}
+\definecolor{accent}{HTML}{2E86AB}
+\definecolor{soft}{HTML}{F4F7FB}
+
+% ---------- Section styling ----------
+\titleformat{\section}
+  {\Large\bfseries\color{deepblue}}
+  {}{0em}{}[{\color{accent}\titlerule[1.2pt]}]
+\titlespacing*{\section}{0pt}{18pt}{10pt}
+
+% ---------- Reusable boxes ----------
+\newtcolorbox{stepbox}[1]{
+  colback=soft, colframe=deepblue,
+  boxrule=0.8pt, arc=3pt, outer arc=3pt,
+  left=10pt, right=10pt, top=6pt, bottom=6pt,
+  title={#1}, fonttitle=\bfseries\color{white},
+  colbacktitle=deepblue, coltitle=white
+}
+
+\hypersetup{colorlinks=true, linkcolor=deepblue, urlcolor=deepblue}
+
+\begin{document}
+
+% ---------- Title ----------
+\begin{center}
+  {\Huge\bfseries\color{deepblue} A Simple Tutorial on\\[2pt] Logits}\\[4pt]
+  {\color{accent}\rule{0.4\linewidth}{1pt}}
+\end{center}
+\vspace{10pt}
+
+\section*{What Is a Logit?}
+
+A \textbf{logit} is the \textbf{raw score} produced by the model \emph{before} softmax converts the scores into probabilities.
+
+For example, suppose the possible classes are:
+\[
+[\text{World},\ \text{Sports},\ \text{Business},\ \text{Sci/Tech}]
+\]
+
+\begin{stepbox}{Example: Raw Logits}
+The model might produce:
+\[
+\text{logits} = [1.2,\ 0.5,\ 3.8,\ 0.9]
+\]
+
+These are \textbf{not probabilities} --- they can be negative, positive, and don't need to sum to 1.
+
+After applying \textbf{softmax}:
+\[
+\text{softmax(logits)} = [0.06,\ 0.03,\ 0.87,\ 0.04]
+\]
+
+Now they \emph{are} probabilities, and they sum to 1.
+\end{stepbox}
+
+\[
+\boxed{\text{Logit} = \text{raw confidence score before softmax}}
+\]
+
+\end{document}
